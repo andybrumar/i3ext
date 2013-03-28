@@ -65,7 +65,7 @@ module nozzlemount(){
 %translate([0.5,30.5,25]) rotate([0,90,-90]) idler();
 
 // gears - for visualization
-rotate([0,180,90]) translate([-8,-21,2]) {
+%rotate([0,180,90]) translate([-8,-21,2]) {
 	big_gear();
 	translate([0,0,-2]) small_gear();
 	translate([0,0,-22]) cylinder(r=5/2, h=75, center=true); // M5 bolt
