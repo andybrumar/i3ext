@@ -16,3 +16,9 @@ The extruder requires:
 * MK7 hobbed pulley (Makerbot, TrinityLabs, etc)
 
 I have not tested this yet, so consider it highly experimental.
+
+RP one of each:
+
+* main_block.scad
+* idler.scad
+* large_gear, small_gear from gears.scad
