@@ -4,7 +4,7 @@ bearing diameter 16mm
 
 hobb = 7; 				// use 6 if using Prusa's hobbed pulley
 mount_spacing = 24; 	// use 30 if using the newer, 30mm hole x-carriage
-jhead_mount = true; 	// set to false if you're using the prusanozzle
+jhead_mount = true; 	// set to false if using prusanozzle or stacking
 
 // uncomment if printing
 //rotate([0,0,-90]) translate([-45,7,0]) idler();
