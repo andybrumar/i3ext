@@ -10,10 +10,11 @@ jhead_mount = true; 	// set to false if you're using the prusanozzle
 //rotate([0,0,-90]) translate([-45,7,0]) idler();
 //rotate([0,0,0]) translate([45,-24,0]) idler();
 
-use <jhead.scad>;	// http://www.thingiverse.com/thing:45379
+use <jhead.scad>;		// http://www.thingiverse.com/thing:45379
 use <mk7.scad>; 		// TrinityLabs hobbed pulley
 use <idler.scad>;		// idler
 use <gears.scad>;		// gears
+use <nema17.scad>;		// NEMA17 stepper motor
 
 // jhead mounting groove
 module jhead() {
@@ -64,11 +65,14 @@ module nozzlemount(){
 %translate([0.5,30.5,25]) rotate([0,90,-90]) idler();
 
 // gears - for visualization
-%rotate([0,180,90]) translate([-8.5,-21,2]) {
+rotate([0,180,90]) translate([-8,-21,2]) {
 	big_gear();
 	translate([0,0,-2]) small_gear();
 	translate([0,0,-22]) cylinder(r=5/2, h=75, center=true); // M5 bolt
 }
+
+// NEMA17 - for visualization
+%translate([21,-21,3]) rotate([0,180,0]) nema17();
 
 // construct the extruder body
 difference(){
@@ -163,3 +167,4 @@ difference(){
 		translate([-10,-66,0]) rotate([-23,0,0]) cube([12,20,90]);
 		}
 	}
+
