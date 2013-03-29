@@ -1,35 +1,37 @@
 
 include <gear_script.scad>;
 
-module big_gear()
-{
-	difference(){
-	translate ([0,0,0])
-	gear (
-		number_of_teeth=20,
-		circular_pitch=345,
-		rim_thickness=5,
-		bore_diameter=5.2);
-	translate ([0,0,6])
-	cylinder(r=9.2/2, h=5, $fn=6);
-
-
-	}
-
-}
-
-
-module small_gear()
-{
-	translate([0,0,0])
-	{
-
-		translate ([29,0,0])
-		rotate ([0,0,360*-1/20]) gear (number_of_teeth=10,
-			circular_pitch=345,rim_thickness=10,hub_thickness=15,bore_diameter=5.4);
+module big_gear() {
+	difference() {
+		translate ([0,0,0])
+			gear(number_of_teeth=26,
+				 circular_pitch=300,
+				 rim_thickness=5,
+				 bore_diameter=5.2
+				 );
+		translate ([0,0,6]) cylinder(r=9.2/2, h=5, $fn=6);
 	}
 }
 
 
-//big_gear();
+module small_gear() {
+	translate([29,0,0]) {
+		difference(){
+			rotate([0,0,360*-1/10]) 
+				gear(number_of_teeth=9,
+					 circular_pitch=300,
+					 rim_thickness=15,
+					 hub_thickness=17,
+					 hub_diameter=18.5,
+					 gear_thickness = 8,
+					 bore_diameter=5.4
+					 );
+			translate([-3,3,9]) cube([6,3,9]);
+			translate([0,0,9+3]) rotate([-90,0,0]) cylinder(r=1.5, h=20, $fn=10);
+		}
+	}
+}
+
+
+big_gear();
 small_gear();
