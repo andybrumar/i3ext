@@ -129,23 +129,23 @@ difference(){
 
 	// hobbed pulley cutout from drivetrain block
 	if (drive=="back" || drive=="both") {
-		translate([21,9.1,25.5]) cylinder(r=hobb, h=25); 
-		translate([-6+20,9,25.5]) cube([14,12,25]); 
-		translate([21,9.1,5.5]) cylinder(r=hobb, h=2); // support for bearing
-		translate([-6+20,9,5.5]) cube([14,12,2]); // support for back bearing 
+		translate([21,8.1,25.5]) cylinder(r=hobb, h=25); 
+		translate([-6+20,8,25.5]) cube([14,12,25]); 
+		translate([21,8.1,5.5]) cylinder(r=hobb, h=2); // support for bearing
+		translate([-6+20,8,5.5]) cube([14,12,2]); // support for back bearing 
 	}
 	if (drive=="front" || drive=="both") {
-		translate([21,9.1,5.5]) cylinder(r=hobb, h=20); 
-		translate([-6+20,9,5.5]) cube([14,12,20]);  
-		translate([21,9.1,41.5]) cylinder(r=hobb, h=2); // support for bearing
-		translate([-6+20,9,41.5]) cube([14,12,5]); // support for back bearing
+		translate([21,8.1,5.5]) cylinder(r=hobb, h=20); 
+		translate([-6+20,8,5.5]) cube([14,12,20]);  
+		translate([21,8.1,41.5]) cylinder(r=hobb, h=2); // support for bearing
+		translate([-6+20,8,41.5]) cube([14,12,5]); // support for back bearing
 	}
 
 	// 625zz filament drive bearing cutouts from drivetrain block
-	translate([21,9-0.95,-1]) cylinder(r=8.1, h=6); 
-		%translate([21,9,-1]) cylinder(r=8.1, h=6); // visualize it
-	translate([21,9-0.95,-5+52-4]) cylinder(r=8.1, h=7.5); 
-		%translate([21,9,-5+52-4]) cylinder(r=8.1, h=7.5); // visualize it
+	translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); 
+		%translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); // visualize it
+	translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=7.5); 
+		%translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=7.5); // visualize it
 
 	// filament drive bearing insert cutouts from drivetrain block
 	translate([13,8,43]) cube([16.2,20,7.5]);
