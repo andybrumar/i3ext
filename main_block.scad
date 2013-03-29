@@ -106,14 +106,14 @@ difference(){
 	translate([21,24,5.5]) cylinder(r=12, h=45);
 
 	// hobbed pulley cutout from drivetrain block
-	translate([21,9.1,5.5]) cylinder(r=hobb, h=45);
-	translate([-6+20,9,5.5]) cube([14,12,45]);
+	translate([21,8.1,5.5]) cylinder(r=hobb, h=45);
+	translate([-6+20,8,5.5]) cube([14,12,45]);
 
 	// 625zz filament drive bearing cutouts from drivetrain block
-	translate([21,9-0.95,-1]) cylinder(r=8.1, h=6); 
-		%translate([21,9,-1]) cylinder(r=8.1, h=6); // visualize it
-	translate([21,9-0.95,-5+52-4]) cylinder(r=8.1, h=7.5); 
-		%translate([21,9,-5+52-4]) cylinder(r=8.1, h=7.5); // visualize it
+	translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); 
+		%translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); // visualize it
+	translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=7.5); 
+		%translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=7.5); // visualize it
 
 	// filament drive bearing insert cutouts from drivetrain block
 	translate([13,8,43]) cube([16.2,20,7.5]);
