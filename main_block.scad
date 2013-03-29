@@ -110,9 +110,9 @@ difference(){
 	translate([-6+20,9,5.5]) cube([14,12,45]);
 
 	// 625zz filament drive bearing cutouts from drivetrain block
-	translate([21,9,-1]) cylinder(r=8.1, h=6); 
+	translate([21,9-0.95,-1]) cylinder(r=8.1, h=6); 
 		%translate([21,9,-1]) cylinder(r=8.1, h=6); // visualize it
-	translate([21,9,-5+52-4]) cylinder(r=8.1, h=7.5); 
+	translate([21,9-0.95,-5+52-4]) cylinder(r=8.1, h=7.5); 
 		%translate([21,9,-5+52-4]) cylinder(r=8.1, h=7.5); // visualize it
 
 	// filament drive bearing insert cutouts from drivetrain block
