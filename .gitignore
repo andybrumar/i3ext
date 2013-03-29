@@ -167,3 +167,8 @@ pip-log.txt
 
 # STLs
 *.stl
+
+# sliced models
+*.gcode
+*.s3g
+*.x3g
