@@ -120,7 +120,7 @@ difference(){
 	translate([-6+21,8,-50+5]) cube([12,12,50]);
 
 	//mounting holes for x-carriage mount from base
-	translate([-5,22+(mount_spacing-24)/2,-28]){
+	translate([-4,22+(mount_spacing-24)/2,-28]){
 		translate([0,0,0]) rotate([0,0,0]) 
 			cylinder(r=3.3, h=70, $fn=15);
 		translate([0,0-mount_spacing,0]) rotate([0,0,0]) 
