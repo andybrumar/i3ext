@@ -23,15 +23,16 @@ module small_gear() {
 					 rim_thickness=15,
 					 hub_thickness=17,
 					 hub_diameter=18.5,
-					 gear_thickness = 8,
-					 bore_diameter=5.4
+					 gear_thickness=8,
+					 bore_diameter=6.4
 					 );
-			translate([-3,3,9]) cube([6,3,9]);
-			translate([0,0,9+3]) rotate([-90,0,0]) cylinder(r=1.5, h=20, $fn=10);
+			translate([-3.25,3.75,9]) cube([6.5,3.2,9]);
+			translate([0,0,9+3.5]) rotate([-90,0,0]) 
+				cylinder(r=1.75, h=20, $fn=10);
 		}
 	}
 }
 
 
-big_gear();
+//big_gear();
 small_gear();
