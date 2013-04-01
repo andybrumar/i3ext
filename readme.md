@@ -21,40 +21,57 @@ The extruder requires:
 
 I have not tested this yet, so consider it highly experimental.
 
-BUILD:
+Build
+=====
 
 Large Gear:
+
 1. Slip M5 nyloc into large gear.
+
 2. Screw M5 threaded rod into backside of large gear and screw in until flush
 with front of gear.
+
 3. Screw M5 standard nut on other end until it butts up against large gear and tighten.
 
 Extruder Body:
+
 1. Slip 625zz bearings into slots at front and back of extruder body.
+
 2. Slide M5 threaded rod assembly through front 625zz bearing.
+
 3. Slide MK7 hobbed pulley onto M5 threaded rod.
+
 4. Slide M5 threaded rod through back 625zz bearing.
+
 5. Screw on M5 nyloc to the backside of the M5 threaded rod, locking the M5 threaded 
 rod in place.
+
 6. Align MK7 hobbed gear with filament channel and tighten set screw.
 
 NEMA17 Motor: 
+
 1. Align NEMA17 motor with motor mount holes.
+
 2. Screw in four 6mm M3 screws to secure it to the extruder body.
 
 Small Gear:
+
 1. Slip M3 nut in small gear nut trap.
+
 2. Screw in 6mm M3 nut into small gear side hole and screw through M3 nut.
+
 3. Slide small gear on NEMA17 motor axle with teeth facing inward aligning the teeth
 with the large gear.
 
 Prusa i3 Carriage:
+
 1. Screw extruder body into x-carriage holes.
 
 Done!
 
 
-NOTE: 
+NOTE
+====
 
 * main_block.scad: whole drivetrain area is open
 
