@@ -7,9 +7,9 @@ module big_gear() {
 			gear(number_of_teeth=26,
 				 circular_pitch=300,
 				 rim_thickness=5,
-				 bore_diameter=5.2
+				 bore_diameter=6.2
 				 );
-		translate ([0,0,6]) cylinder(r=9.2/2, h=5, $fn=6);
+		translate ([0,0,6]) cylinder(r=10.2/2, h=5, $fn=6);
 	}
 }
 
@@ -34,5 +34,5 @@ module small_gear() {
 }
 
 
-//big_gear();
+big_gear();
 small_gear();
