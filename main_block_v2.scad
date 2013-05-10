@@ -3,7 +3,7 @@ bearing diameter 16mm
 */
 
 hobb = 7; 				// use 6 if using Prusa's hobbed pulley - DOES NOT WORK!
-mount_spacing = 24; 	// use 30 if using the newer, 30mm hole x-carriage
+mount_spacing = 30; 	// use 30 if using the newer, 30mm hole x-carriage
 jhead_mount = true; 	// set to false if using prusanozzle or stacking
 drive = "both";		// 'front' = front filament drive
 						// 'back' = back filament drive
