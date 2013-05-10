@@ -50,9 +50,11 @@ module jhead() {
 
 // filament path and prusanozzle mounting holes
 module nozzlemount(){
-	rotate([0,90,0]) translate([0,2,0]) cylinder(r=2, h=70); // filament cutout
+	rotate([0,90,0]) translate([0,2,0]) cylinder(r=2.25, h=70); // filament cutout
 	%rotate([0,90,0]) translate([0,2,-100]) 
 		cylinder(r=1.4, h=200, $fn=30); // filament visual path
+	// slightly coned filament entrance after MK7 hobbed pulley:
+	rotate([0,90,0]) translate([0,2,17]) cylinder(r1=1, r2=3.5, h=8);
 	//translate([1,0+2,0]) rotate([0,90,0]) cylinder(r1=4, r2=2, h=3);
 	translate([0,15+2,0]) rotate([0,90,0]) cylinder(r=2, h=70);
 	translate([10-2.8,15+2,0]) rotate([0,90,0]) cylinder(r=3.3, h=70,$fn=6);
@@ -120,11 +122,13 @@ difference(){
 	translate([21-15.5,-21-15.5,-1]) cylinder(r=2, h=5);
 
 	// idler bearing cutout from drivetrain block
+	// may not be needed - at least for 3mm filament!
+	// problems pushing filament into bottom hole w/ this cutout there
 	if (drive=="back" || drive=="both") {
-		translate([21,24,25.5]) cylinder(r=12, h=25);
+		translate([21,24+3,25.5]) cylinder(r=12, h=25);
 	}
 	if (drive=="front" || drive=="both") {
-		translate([21,24,5.5]) cylinder(r=12, h=20);
+		translate([21,24+3,5.5]) cylinder(r=12, h=20);
 	}
 
 	// hobbed pulley cutout from drivetrain block
@@ -143,12 +147,12 @@ difference(){
 
 	// 625zz filament drive bearing cutouts from drivetrain block
 	translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); 
-		%translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); // visualize it
-	translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=7.5); 
-		%translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=7.5); // visualize it
+		%translate([21,9-0.9,-1]) cylinder(r=8.1, h=5); // visualize it
+	translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=8.5); 
+		%translate([21,9-0.9,-5+52-4]) cylinder(r=8.1, h=5); // visualize it
 
 	// filament drive bearing insert cutouts from drivetrain block
-	translate([13,8,43]) cube([16.2,20,7.5]);
+	translate([13,8,43]) cube([16.2,20,8.5]);
 	translate([-6+21,8,-50+5]) cube([12,12,50]);
 
 	//mounting holes for x-carriage mount from base
