@@ -88,10 +88,8 @@ Prusa i3 Carriage:
 Done!
 
 
-NOTE
+Notes
 ====
-
-* main_block.scad: whole drivetrain area is open (*DEPRECIATED*, use main_block_v2.scad)
 
 * main_block_v2.scad: has config options to:
 
