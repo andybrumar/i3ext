@@ -6,7 +6,8 @@ the Prusa i3 3D printer.
 
 I have modified it to work with jhead hotends (potentially dual extrusion, 
 if stacked vertically - work in progress), MK7-compatible hobbed pulleys, and
-variable mount hole spacings.
+variable mount hole spacings.  Example models are available for viewing in
+the /STLs folder.
 
 The extruder requires:
 
