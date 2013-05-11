@@ -74,7 +74,7 @@ Done!
 NOTE
 ====
 
-* main_block.scad: whole drivetrain area is open (*DEPRECIATED*)
+* main_block.scad: whole drivetrain area is open (*DEPRECIATED*, use main_block_v2.scad)
 
 * main_block_v2.scad: has config options to:
 
