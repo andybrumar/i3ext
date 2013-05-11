@@ -78,13 +78,13 @@ NOTE
 
 * main_block_v2.scad: has config options to:
 
-    1. open up either the front, back, or both idler areas in case you want to stack and selectively use one drive area over the other (default = 'both')
+1. open up either the front, back, or both idler areas in case you want to stack and selectively use one drive area over the other (default = 'both')
 
-    2. adjust the x-carriage mount hole spacing (default = 30mm)
+2. adjust the x-carriage mount hole spacing (default = 30mm)
 
-    3. adjust the filament diameter (default = 3mm)
+3. adjust the filament diameter (default = 3mm)
 
-    4. use either J-Head or Prusa Nozzle hotends (default = jhead)
+4. use either J-Head or Prusa Nozzle hotends (default = jhead)
 
 NOTE: do NOT change the hobb diameter in the top of the config options as this
 does not work right yet
