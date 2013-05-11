@@ -2,26 +2,32 @@
 bearing diameter 16mm
 */
 
-hobb = 7; 				// use 6 if using Prusa's hobbed pulley - DOES NOT WORK!
-mount_spacing = 30; 	// use 30 if using the newer, 30mm hole x-carriage
-jhead_mount = true; 	// set to false if using prusanozzle or stacking
-filament = 3;			// set to 3mm or 1.75mm or custom
-drive = "both";		    // 'front' = front filament drive
-						// 'back' = back filament drive
-						// 'both' = both front and back
+hobb = 7; 					// use 6 if using Prusa's hobbed pulley - DOES NOT WORK!
+mount_spacing = 30; 		// use 30 if using the newer, 30mm hole x-carriage
+jhead_mount = true; 		// set to false if using prusanozzle or stacking
+jhead_groove = "both";		// 'front', 'back', 'both', in case you
+							// want to use a prusanozzle for 1 of 2 hotends
+filament = 3.00;			// set to 3mm or 1.75mm or custom
+							// note: a 1.5" gap is added to a filament channel
+drive = "both";			// 'front' = front filament drive
+							// 'back' = back filament drive
+							// 'both' = both front and back
 
 // uncomment if printing
 //rotate([0,0,-90]) translate([-45,7,0]) idler();
 //rotate([0,0,0]) translate([45,-24,0]) idler();
 
 // set filament radius
-filament_rad = filament/2 + 0.75;
+// add 1.5mm gap around filament holes through extruder body
+filament_rad = filament/2 + 0.75; 
 
 use <jhead.scad>;		// http://www.thingiverse.com/thing:45379
 use <mk7.scad>; 		// TrinityLabs hobbed pulley
 use <idler.scad>;		// idler
 use <gears.scad>;		// gears
 use <nema17.scad>;		// NEMA17 stepper motor
+
+//translate([45,0,0]) import("main_block_top.stl");
 
 // jhead mounting groove
 module jhead() {
@@ -147,6 +153,14 @@ difference(){
 		translate([21,8.1,41.5]) cylinder(r=hobb, h=2); // support for bearing
 		translate([-6+20,8,41.5]) cube([14,12,5]); // support for back bearing
 	}
+
+	// remove excess jhead mounting rails
+	if (jhead_groove=="front") {
+		translate([-20,0,26]) cube(size=[12,30,27]);
+	} else if (jhead_groove=="back") {
+		translate([-20,0,-5]) cube(size=[12,30,27]);
+		translate([-15,0,12]) rotate([0,-55,0]) cube(size=[12,30,15]);
+	} 
 
 	// 625zz filament drive bearing cutouts from drivetrain block
 	translate([21,9-0.9,-1]) cylinder(r=8.1, h=6); 
