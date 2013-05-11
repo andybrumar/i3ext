@@ -25,6 +25,15 @@ reliable so far.
 Build
 =====
 
+A great photo of how the assembly goes together can be found here:
+
+http://www.flickr.com/photos/borgnamarco/8480383523/
+
+Also check out the other photos in this photostream:
+
+http://www.flickr.com/photos/borgnamarco/8481477322/in/photostream/
+
+
 Large Gear:
 
 1. Slip M5 nyloc into large gear.
