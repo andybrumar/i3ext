@@ -103,6 +103,8 @@ NOTE
 
 4. use either J-Head or Prusa Nozzle hotends (default = jhead)
 
+5. select where you want the J-Head mount placed (default = 'both')
+
 NOTE: do NOT change the hobb diameter in the top of the config options as this
 does not work right yet
 
