@@ -19,7 +19,7 @@ The extruder requires:
 * M3 nut (5 - 4-motor mount, 1-small gear)
 * 6mm M3 screw (1 - small gear)
 
-I have about 15 hours of printing with this extruder so far and it's been
+I have about 15 hours of printing with this extruder and it's been
 reliable so far.
 
 Build
@@ -78,13 +78,13 @@ NOTE
 
 * main_block_v2.scad: has config options to:
 
-    #. open up either the front, back, or both idler areas in case you want to stack and selectively use one drive area over the other (default = 'both')
+    1. open up either the front, back, or both idler areas in case you want to stack and selectively use one drive area over the other (default = 'both')
 
-    #. adjust the x-carriage mount hole spacing (default = 30mm)
+    2. adjust the x-carriage mount hole spacing (default = 30mm)
 
-    #. adjust the filament diameter (default = 3mm)
+    3. adjust the filament diameter (default = 3mm)
 
-    #. use either J-Head or Prusa Nozzle hotends (default = jhead)
+    4. use either J-Head or Prusa Nozzle hotends (default = jhead)
 
 NOTE: do NOT change the hobb diameter in the top of the config options as this
 does not work right yet
