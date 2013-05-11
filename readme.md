@@ -5,8 +5,8 @@ This is a derivative of Kliment's excellent work on his 'i3ext' project for
 the Prusa i3 3D printer.
 
 I have modified it to work with jhead hotends (potentially dual extrusion, 
-if stacked vertically), MK7-compatible hobbed pulleys, and variable mount 
-hole spacings.
+if stacked vertically - work in progress), MK7-compatible hobbed pulleys, and
+variable mount hole spacings.
 
 The extruder requires:
 
@@ -19,7 +19,8 @@ The extruder requires:
 * M3 nut (5 - 4-motor mount, 1-small gear)
 * 6mm M3 screw (1 - small gear)
 
-I have not tested this yet, so consider it highly experimental.
+I have about 15 hours of printing with this extruder so far and it's been
+reliable so far.
 
 Build
 =====
@@ -73,18 +74,25 @@ Done!
 NOTE
 ====
 
-* main_block.scad: whole drivetrain area is open
+* main_block.scad: whole drivetrain area is open (*DEPRECIATED*)
 
-* main_block_v2.scad: has config option to open up either the front, back, or 
-both idler areas in case you want to stack and selectively use one drive area
-over the other.
+* main_block_v2.scad: has config options to:
 
-* do not change the hobb diameter in the top of the config options as this
-does not work right yet.
+    #. open up either the front, back, or both idler areas in case you want to stack and selectively use one drive area over the other (default = 'both')
+
+    #. adjust the x-carriage mount hole spacing (default = 30mm)
+
+    #. adjust the filament diameter (default = 3mm)
+
+    #. use either J-Head or Prusa Nozzle hotends (default = jhead)
+
+NOTE: do NOT change the hobb diameter in the top of the config options as this
+does not work right yet
 
 
 RP one of each:
 
-* main_block.scad or main_block_v2.scad
+* main_block_v2.scad
 * idler.scad
 * large_gear, small_gear from gears.scad
+* fan_mount.scad_
