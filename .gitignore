@@ -165,9 +165,6 @@ pip-log.txt
 # Sketchup
 *.skb
 
-# STLs
-*.stl
-
 # sliced models
 *.gcode
 *.s3g
