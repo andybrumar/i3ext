@@ -5,14 +5,17 @@ bearing diameter 16mm
 hobb = 7; 				// use 6 if using Prusa's hobbed pulley - DOES NOT WORK!
 mount_spacing = 30; 	// use 30 if using the newer, 30mm hole x-carriage
 jhead_mount = true; 	// set to false if using prusanozzle or stacking
-drive = "both";		// 'front' = front filament drive
+filament = 3;			// set to 3mm or 1.75mm or custom
+drive = "both";		    // 'front' = front filament drive
 						// 'back' = back filament drive
 						// 'both' = both front and back
-
 
 // uncomment if printing
 //rotate([0,0,-90]) translate([-45,7,0]) idler();
 //rotate([0,0,0]) translate([45,-24,0]) idler();
+
+// set filament radius
+filament_rad = filament/2 + 0.75;
 
 use <jhead.scad>;		// http://www.thingiverse.com/thing:45379
 use <mk7.scad>; 		// TrinityLabs hobbed pulley
@@ -50,9 +53,9 @@ module jhead() {
 
 // filament path and prusanozzle mounting holes
 module nozzlemount(){
-	rotate([0,90,0]) translate([0,2,0]) cylinder(r=2.25, h=70); // filament cutout
+	rotate([0,90,0]) translate([0,2,0]) cylinder(r=filament_rad, h=70); // filament cutout
 	%rotate([0,90,0]) translate([0,2,-100]) 
-		cylinder(r=1.4, h=200, $fn=30); // filament visual path
+		cylinder(r=filament_rad-0.75, h=200, $fn=30); // filament visual path
 	// slightly coned filament entrance after MK7 hobbed pulley:
 	rotate([0,90,0]) translate([0,2,17]) cylinder(r1=1, r2=3.5, h=8);
 	//translate([1,0+2,0]) rotate([0,90,0]) cylinder(r1=4, r2=2, h=3);
