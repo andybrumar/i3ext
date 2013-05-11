@@ -19,6 +19,13 @@ The extruder requires:
 * M3 nut (5 - 4-motor mount, 1-small gear)
 * 6mm M3 screw (1 - small gear)
 
+RP one of each:
+
+* main_block_v2.scad
+* idler.scad
+* large_gear, small_gear from gears.scad
+* fan_mount.scad
+
 I have about 15 hours of printing with this extruder and it's been
 reliable so far.
 
@@ -99,9 +106,3 @@ NOTE: do NOT change the hobb diameter in the top of the config options as this
 does not work right yet
 
 
-RP one of each:
-
-* main_block_v2.scad
-* idler.scad
-* large_gear, small_gear from gears.scad
-* fan_mount.scad_
