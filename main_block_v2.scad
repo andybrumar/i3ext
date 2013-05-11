@@ -21,11 +21,11 @@ drive = "both";			// 'front' = front filament drive
 // add 1.5mm gap around filament holes through extruder body
 filament_rad = filament/2 + 0.75; 
 
-use <jhead.scad>;		// http://www.thingiverse.com/thing:45379
-use <mk7.scad>; 		// TrinityLabs hobbed pulley
-use <idler.scad>;		// idler
-use <gears.scad>;		// gears
-use <nema17.scad>;		// NEMA17 stepper motor
+use <inc/jhead.scad>;		// http://www.thingiverse.com/thing:45379
+use <inc/mk7.scad>; 		// TrinityLabs hobbed pulley
+use <idler.scad>;           // idler
+use <gears.scad>;           // gears
+use <inc/nema17.scad>;		// NEMA17 stepper motor
 
 //translate([45,0,0]) import("main_block_top.stl");
 
