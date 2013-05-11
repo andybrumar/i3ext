@@ -10,8 +10,8 @@ module extruder_idler_holes(){
   // Idler shaft
   translate([-12,0,4.1+2])rotate([0,90,0])cylinder(r=4.1, h=24);
   // Screw holes
-  //translate([7,-16,-1]) cylinder(r=2.2, h=24);
-  //translate([-7,-16,-1]) cylinder(r=2.2, h=24);
+  translate([7,-16,-1]) cylinder(r=2.2, h=24);
+  translate([-7,-16,-1]) cylinder(r=2.2, h=24);
   hull() {
     translate([7,17,-1]) cylinder(r=2.2, h=24);
     translate([7,17,-1]) rotate([10,0,0]) cylinder(r=2.2, h=24);
