@@ -5,7 +5,7 @@ This is a derivative of Kliment's excellent work on his 'i3ext' project for
 the Prusa i3 3D printer.
 
 I have modified it to work with jhead hotends (potentially dual extrusion, 
-if stacked vertically - work in progress), MK7-compatible hobbed pulleys, and
+if stacked vertically - option now available), MK7-compatible hobbed pulleys, and
 variable mount hole spacings.  Example models are available for viewing in
 the /STLs folder.
 
@@ -22,12 +22,15 @@ The extruder requires:
 
 RP one of each:
 
-* main_block_v2.scad
+* main_block_v2.scad -OR- main_block_v2_kliment.scad
 * idler.scad
-* large_gear, small_gear from gears.scad
+* large_gear, small_gear from gears.scad -OR- gears-kliment.scad
 * fan_mount.scad
 
-I have about 15 hours of printing with this extruder and it's been
+Kliment's variant uses smaller gear diameters, which makes the dual extruder 
+less tall.
+
+I have about 15 hours of printing with this extruder (non-Kliment) and it's been
 reliable so far.
 
 Build
@@ -102,6 +105,8 @@ Notes
 4. use either J-Head or Prusa Nozzle hotends (default = jhead)
 
 5. select where you want the J-Head mount placed (default = 'both')
+
+6. select whether you want the dual extruder (default = false)
 
 NOTE: do NOT change the hobb diameter in the top of the config options as this
 does not work right yet
