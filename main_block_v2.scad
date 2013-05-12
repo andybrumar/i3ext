@@ -12,6 +12,7 @@ filament = 3.00;			// set to 3mm or 1.75mm or custom
 drive = "both";			// 'front' = front filament drive
 							// 'back' = back filament drive
 							// 'both' = both front and back
+dual = false;				// dual extruder stacking?  ** EXPERIMENAL!!!!! **
 
 // uncomment if printing
 //rotate([0,0,-90]) translate([-45,7,0]) idler();
@@ -27,7 +28,10 @@ use <idler.scad>;           // idler
 use <gears.scad>;           // gears
 use <inc/nema17.scad>;		// NEMA17 stepper motor
 
-//translate([45,0,0]) import("main_block_top.stl");
+if (dual==true) {
+	translate([48.9,0,0]) import("STLs/main_block_top.stl");
+	//translate([41.9,0,0]) import("STLs/main_block_top_kliment.stl");
+}
 
 // jhead mounting groove
 module jhead() {
@@ -93,16 +97,26 @@ if (drive=="front" || drive=="both") {
 	translate([0,0,-2]) small_gear();
 	translate([0,0,-22]) cylinder(r=5/2, h=75, center=true); // M5 bolt
 }
+if (dual==true) {
+	%rotate([0,180,90]) translate([-8,-70,2]) {
+		big_gear();
+		translate([0,0,-2]) small_gear();
+		translate([0,0,-22]) cylinder(r=5/2, h=75, center=true); // M5 bolt
+	}
+}
 
 // NEMA17 - for visualization
 %translate([21,-21,3]) rotate([0,180,0]) nema17();
+if (dual==true) {
+	%translate([70,-21,3]) rotate([0,180,0]) nema17();
+}
 
 // construct the extruder body
 difference(){
 	union(){
 		cube([42,19,52]);  							// drivetrain block
 		translate([0,-42,0]) cube([42,42+3,3]);  		// NEMA17 motor mount
-		translate([-7.99,-42,0])cube([8,80,52]);  	// base
+		translate([-7.99,-42,0]) cube([8,80,52]);  	// base
 		translate([-1,31,0]) cube([6, 7, 52]);		// idler stop
 		translate([-1,15,50]) cube([6, 20, 2]);		// back idler stop
 		//translate([-1,15,22]) cube([6, 20, 2]);		// front idler stop
@@ -117,9 +131,11 @@ difference(){
 	}
 
 	// antiwarpagenation: angled corners
-	translate([46,-91,-1]) rotate([0,0,45]) cube(40);
+	if (dual==false) {
+		translate([46,-91,-1]) rotate([0,0,45]) cube(40); // top left NEMA mount corner
+		translate([46,13,-1]) rotate([0,0,45]) cube([40,40,60]); // top-right corner
+	}
 	translate([-11,-91,-1]) rotate([0,0,45]) cube([40,40,60]);
-	translate([46,13,-1]) rotate([0,0,45]) cube([40,40,60]);
 	translate([-12,31,-1]) rotate([0,0,45]) cube([20,20,60]);
 	translate([6,33,-1]) rotate([0,0,45]) cube([40,40,60]);
 
@@ -192,12 +208,12 @@ difference(){
 
 		// idler nuts
 		if (drive=="back" || drive=="both") {
-			translate([33.5,7,52-12-7-3]) cube([15,3,6]);
-			translate([33.5,7,52-12-7-3+14]) cube([15,3,6]);
+			translate([37,12,52-12-7]) rotate([90,0,0]) cylinder(r=3.3, h=12.1,$fn=6);
+			translate([37,12,52-5]) rotate([90,0,0]) cylinder(r=3.3, h=12.1,$fn=6);
 		}
 		if (drive=="front" || drive=="both") {
-			translate([33.5,7,52-12-25-7-3]) cube([15,3,6]);
-			translate([33.5,7,52-12-25+3+1]) cube([15,3,6]);
+			translate([37,12,52-12-7-25]) rotate([90,0,0]) cylinder(r=3.3, h=12.1,$fn=6);
+			translate([37,12,52-5-25]) rotate([90,0,0]) cylinder(r=3.3, h=12.1,$fn=6);
 		}
 
 		// idler bolts
